@@ -1,0 +1,20 @@
+name: parallel-install-test
+base: core22
+version: '0.2'
+summary: Test yaml for parallel installs
+description: |
+  This snapcraft.yaml should test the various cases to make sure that parallel
+  installs does not break.
+
+grade: stable
+confinement: strict
+
+parts:
+  my-part:
+    plugin: dump
+    source: .
+apps:
+  app1:
+    command: ./app1.sh
+  app2:
+    command: ./app2.sh
